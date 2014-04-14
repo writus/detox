@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    
+    <head>
+        
+        <!-- Basics -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        {{ head }}
+        
+        
+        <!-- Meta -->
+        <meta name="description" content="{{ blog.description }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="">
+        <meta name="keywords" content="awesome, definitely">
+
+        <!-- CSS: Normalize sheet first, minify everything for production -->
+        <link rel="stylesheet" type='text/css' href="{{ themepath }}assets/css/main.css"/>
+        
+        <!-- Import web fonts using the link tag instead of CSS @import: http://stackoverflow.com/questions/12316501/including-google-web-fonts-link-or-import -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Montserrat:700' rel='stylesheet' type='text/css'>
+        
+        <!-- Font Awesome -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        
+        <!-- Favicon.ico and apple-touch-icon.png (according to Apple docs). A good tool is http://iconifier.net/ -->
+        <!-- <link rel="shortcut icon" href="assets/ico/favicon.ico"> -->
+        <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
+        
+        <!-- Mode requirements -->
+        <!-- 1. Moot style -->
+        <link rel="stylesheet" type="text/css" href="//cdn.moot.it/1/moot.css">
+        <!-- 2. jQuery library (v1.7+ required) -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <!-- 3. Moot application -->
+        <script src="//cdn.moot.it/1/moot.min.js"></script>
+        
+        
+    </head>
+
+    <body>
+        
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chrome/‎">install Google Chrome</a> to experience this site.</p>
+        <![endif]-->
+        
+        <header id="site-header">
+            <div class="container">
+                {% if blog.ts.logo.url %}<a id="blog-logo" href="/"><img src="{{ blog.ts.logo.url }}" alt="Blog Logo" /></a>{% endif %}
+                <a href="/"  alt="Blog Title"><h1 class="blog-title heading">{{ blog.name }}</h1></a>
+                <p class="blog-description">{{ blog.description}}</p>
+            </div>
+        </header>        
+        
+        
+        {% block content %}{% endblock %}
+        
+        <footer id="site-footer">
+            <div class="container">
+                <a href="/feed/" title="Get the RSS feed"><span class="tooltip"><i class="fa fa-rss"></i></span></a>
+                <section>&copy; <a href="/">{{blog.name}}</a> 2013 | All rights reserved</section>
+                <section>Theme by <a href="http://www.jrdnbwmn.com">Jordan Bowman</a>. Published with <a class="icon-ghost" href="http://writus.com">Writus</a>.</section>
+            </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script type="text/javascript" src="{{ themepath }}assets/js/fittext.js"></script>
+        
+        <script type="text/javascript">
+          $(".heading").fitText();
+        </script>
+        
+        
+        <script type="text/javascript" src="{{ themepath }}assets/js/index.js"></script>
+        
+    </body>
+
+</html>
